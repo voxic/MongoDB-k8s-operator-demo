@@ -46,7 +46,7 @@ To stop the VM run `vagrant halt` inside the vagrant folder. To start a VM from 
 
 For more information on working with the MongoDB Atlas Operator read the main documentation.
 
-https://github.com/mongodb/mongodb-atlas-kubernetes
+https://github.com/mongodb/mongodb-atlas-kubernetes   
 https://www.mongodb.com/docs/atlas/atlas-operator/
 
 ## Examples

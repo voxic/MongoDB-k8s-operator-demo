@@ -1,0 +1,18 @@
+## Deploy operator
+kubectl apply -f https://raw.githubusercontent.com/mongodb/mongodb-atlas-kubernetes/main/deploy/all-in-one.yaml
+
+## Get cluster ready state
+kubectl get atlasdatabaseusers my-database-user -o=jsonpath='{.status.conditions[?(@.type=="Ready")].status}'
+True
+
+## Get connection string
+kubectl get secret <secretName> -n <namespace> -o=jsonpath='{.data.connectionStringStandardSrv}' | base64 --decode ; echo
+
+## connect to DB
+mongosh <conn_string>
+
+## switch to example DB
+use example
+
+## insert documents
+db.exampleColl.insertMany([{"documentType": "Test Document","documentNumber" : 1},{"documentType": "Test Document","documentNumber" : 2},{"documentType": "Test Document","documentNumber" : 3},{"documentType": "Test Document","documentNumber" : 4},{"documentType": "Test Document","documentNumber" : 5}])

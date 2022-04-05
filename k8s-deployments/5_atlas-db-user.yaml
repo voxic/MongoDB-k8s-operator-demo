@@ -1,0 +1,14 @@
+apiVersion: atlas.mongodb.com/v1
+kind: AtlasDatabaseUser
+metadata:
+  name: my-database-user
+  namespace: mongodb-atlas
+spec:
+  roles:
+    - roleName: "readWriteAnyDatabase"
+      databaseName: "admin"
+  projectRef:
+    name: my-project
+  username: mongo-k8s-admin
+  passwordSecretRef:
+    name: db-pass-secret

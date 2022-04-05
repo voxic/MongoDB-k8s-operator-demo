@@ -1,0 +1,12 @@
+apiVersion: atlas.mongodb.com/v1
+kind: AtlasProject
+metadata:
+  name: my-project
+  namespace: mongodb-atlas
+spec:
+  name: <atlas project name>
+  connectionSecretRef:
+    name: atlas-api-secret
+  projectIpAccessList:
+    - ipAddress: "0.0.0.0/0"
+      comment: "Allowing access to database from everywhere (only for Demo!)"
