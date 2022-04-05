@@ -1,4 +1,4 @@
-# Local Dev Environment
+# Local Dev Environment for testing MongoDB Atlas K8s Operator
 
 ## Prerequisites
 - VirtualBox.
@@ -32,9 +32,11 @@ For Windows we recommend that you use Power Shell, instead of cmd.
 
 This Local Dev Environment is created using Vagrant and aims to offer a one-click setup experience to developers.
 
+The VM contains a single node Kubernetes cluster with DNS and Metallb deployed.
+
 The steps to creating the VM for the local DEV environment are:
-1. Run `vagrant up`.
-2. Run `vagrant ssh`.
+1. Run `vagrant up` in the same folder as the Vagrant file in this repo.
+2. Once the machine is running, run `vagrant ssh` to enter it.
 
 Install the MongoDB atlas operator run  
 `kubectl apply -f https://raw.githubusercontent.com/mongodb/mongodb-atlas-kubernetes/main/deploy/all-in-one.yaml`
