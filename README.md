@@ -24,7 +24,11 @@ There are installers for Mac, Windows, Debian and CentOS.
 
 If you have any other Linux Distribution, you can choose the `Linux` tab and download the binary.
 
-After that, you can go to your Downloads folder and run ```sudo mv vagrant /usr/local/bin/``` to put
+After that, you can go to your Downloads folder and run 
+```
+sudo mv vagrant /usr/local/bin/
+``` 
+to put
 it somewhere where your terminal can find it (this step is necessary only if you are using the binary from the `Linux` tab).
 
 After installing, commands like `vagrant version` should work from anywhere.
@@ -38,7 +42,7 @@ This Local Dev Environment is created using Vagrant and aims to offer a one-clic
 The VM contains a single node Kubernetes cluster with DNS and Metallb deployed.
 
 The steps to creating the VM for the local DEV environment are:
-1. Run `vagrant up` in the same folder as the Vagrant file in this repo.
+1. Run ```vagrant up``` in the same folder as the Vagrant file in this repo.
 2. Once the machine is running, run `vagrant ssh` to enter it.
 
 To stop the VM run `vagrant halt` inside the vagrant folder. To start a VM from a `Stopped` or `Aborted` state, use `vagrant up`.
@@ -47,7 +51,10 @@ To stop the VM run `vagrant halt` inside the vagrant folder. To start a VM from 
 ### MongoDB Atlas Operator
 
 To install the MongoDB atlas operator run
-```kubectl apply -f https://raw.githubusercontent.com/mongodb/mongodb-atlas-kubernetes/main/deploy/all-in-one.yaml``` from inside of the vagrant VM.
+```bash
+kubectl apply -f https://raw.githubusercontent.com/mongodb/mongodb-atlas-kubernetes/main/deploy/all-in-one.yaml
+``` 
+from inside of the vagrant VM.
 
 This will pull the latest version of the MongoDB Atlas Operator and deploy it to the Kubernetes cluster.
 
